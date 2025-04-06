@@ -62,8 +62,8 @@ Sou um profissional movido por **inovação tecnológica**, com experiência em 
 
 ## 👨‍🎓 Formação Acadêmica
 
-- **Graduação em Ciência de Dados** – Universidade São Judas Tadeu *(em andamento)*
-- **Pós-graduação em Arquitetura de Software com Ênfase em Java** – FIAP *(concluindo em 2024)*
+- **Graduação em Ciências Economicas** – Universidade São Judas Tadeu *(em andamento)*
+- **Pós-graduação em  Data Analytics** – FIAP *(em andamento)*
 - **Tecnólogo em Análise e Desenvolvimento de Sistemas** – UniBH
 
 ---
