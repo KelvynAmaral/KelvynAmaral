@@ -1,17 +1,21 @@
 name: Generate Snake
 
 on:
-  # Roda automaticamente a cada 24 horas (meia-noite)
+  # Roda todo dia meia-noite
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" 
   
-  # Permite rodar manualmente na aba "Actions"
+  # Permite rodar manualmente a qualquer momento
   workflow_dispatch:
+
+# --- AQUI ESTÁ A CORREÇÃO (DÁ PERMISSÃO PARA SALVAR A IMAGEM) ---
+permissions: 
+  contents: write
+# ----------------------------------------------------------------
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
