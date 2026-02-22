@@ -1,39 +1,31 @@
 name: Generate Snake
 
 on:
-  # Roda todo dia meia-noite
   schedule:
-    - cron: "0 0 * * *" 
-  
-  # Permite rodar manualmente a qualquer momento
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
-# --- AQUI ESTÁ A CORREÇÃO (DÁ PERMISSÃO PARA SALVAR A IMAGEM) ---
-permissions: 
+permissions:
   contents: write
-# ----------------------------------------------------------------
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Generate Snake
         uses: Platane/snk@v3
         with:
-          # Nome do usuário do GitHub
           github_user_name: ${{ github.repository_owner }}
-          # Onde os arquivos SVG serão salvos
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            
+            dist/github-contribution-grid-snake.svg?color_snake=#d500f9&color_dots=#161b22,#1c2c42,#2d527c,#3d78b6,#79c0ff
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#d500f9&color_dots=#161b22,#1c2c42,#2d527c,#3d78b6,#79c0ff
 
       - name: Push to Output Branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
-          # Define que a saída vai para uma branch separada chamada "output"
           target_branch: output
           build_dir: dist
         env:
